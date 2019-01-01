@@ -4,7 +4,7 @@ Tests using [Scala](https://www.scala-lang.org) and [Spark](https://spark.apache
 
 An article was published explaining:
 
- * [https://github.com/edersoncorbari](https://github.com/edersoncorbari)
+ * [https://github.com/edersoncorbari/tutorials/scala-spark-graph](https://github.com/edersoncorbari/tutorials/scala-spark-graph)
 
 #### Provided Mechanisms ####
 
