@@ -25,6 +25,8 @@ $ cd scala-lab
 $ sbt update; sbt compile; sbt run
 ```
 
+If you receive an error of type: "*Caused by: java.net.UnknownHostException: viking3: viking3: Name or service not known*", your hostname is not configured in the /etc/hosts please add and run again.
+
 #### Testing ####
  
 To perform all the tests please run the command:
