@@ -4,7 +4,8 @@ Tests using [Scala](https://www.scala-lang.org) and [Spark](https://spark.apache
 
 An article was published explaining:
 
- * [https://github.com/edersoncorbari/tutorials/scala-spark-graph](https://github.com/edersoncorbari/tutorials/scala-spark-graph)
+ * [https://edersoncorbari.github.io/tutorials/scala-spark-graph/](https://edersoncorbari.github.io/tutorials/scala-spark-graph/)
+ * [https://dzone.com/articles/bigdata-developing-a-graph-in-spark-and-scala](https://dzone.com/articles/bigdata-developing-a-graph-in-spark-and-scala)
 
 #### Provided Mechanisms ####
 
@@ -44,6 +45,6 @@ $ sbt
 Within the SBT console perform a specific test:
 
 ```shell
-> testOnly io.github.edersoncorbari.graph.HierarchyEmployeeModelTest
+> testOnly io.github.edersoncorbari.graph.HierarchyEmployeeTest
 ```
 

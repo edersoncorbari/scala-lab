@@ -1,7 +1,7 @@
 package io.github.edersoncorbari
 
 import io.github.edersoncorbari.connect.SparkSessionWrapper
-import io.github.edersoncorbari.graph.HierarchyEmployeeService
+import io.github.edersoncorbari.graph.HierarchyEmployee
 
 
 object HierarchyEmployeeApp extends SparkSessionWrapper {
@@ -26,7 +26,7 @@ object HierarchyEmployeeApp extends SparkSessionWrapper {
        ("15", "George Reece", "JUNIOR DEVELOPER", "13")))
       .toDF("id", "name", "role", "id_connect_by")
 
-    val graphDF = HierarchyEmployeeService(sparkSession).compute(empDF).sort($"level".asc)
+    val graphDF = HierarchyEmployee(sparkSession).compute(empDF).sort($"level".asc)
     graphDF.show(false)
 
     stop()

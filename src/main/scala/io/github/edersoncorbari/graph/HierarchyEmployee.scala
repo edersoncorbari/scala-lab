@@ -12,7 +12,7 @@ import scala.util.hashing.MurmurHash3
  *
  * This implementation is prepared for 9 hierarchical levels.
  */
-case class HierarchyEmployeeService(sparkSession: SparkSession) extends Serializable {
+case class HierarchyEmployee(sparkSession: SparkSession) extends Serializable {
 
   private[this] def deepTopLevelHierarcy(vertexNodeDF: DataFrame, edgeRelationShipDF: DataFrame):
     RDD[(Any, (Int, Any, String, Int, Int))] = {

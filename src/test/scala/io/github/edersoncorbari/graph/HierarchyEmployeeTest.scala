@@ -4,7 +4,7 @@ import io.github.edersoncorbari.connect.SparkSessionWrapper
 import org.scalatest.Matchers
 
 
-class HierarchyEmployeeModelTest extends org.scalatest.FunSuite with Matchers with SparkSessionWrapper {
+class HierarchyEmployeeTest extends org.scalatest.FunSuite with Matchers with SparkSessionWrapper {
 
   test("Graph Hierarchy Employee Test") {
     import sparkSession.implicits._
@@ -42,8 +42,8 @@ class HierarchyEmployeeModelTest extends org.scalatest.FunSuite with Matchers wi
     assert(graphDF.filter($"role".contains("SUPERVISOR")).count() == 2) // Level 4
     assert(graphDF.filter($"role".contains("MANAGER")).count() == 1) // Level 5
     assert(graphDF.filter($"role".contains("ANALYST")).count() == 3) // Level 6
-    assert(graphDF.filter($"role".contains("SENIOR DEVELOPER")).count() == 2) // Level 6
-    assert(graphDF.filter($"role".contains("JUNIOR DEVELOPER")).count() == 1) // Level 7
+    assert(graphDF.filter($"role".contains("SENIOR DEVELOPER")).count() == 2) // Level 7
+    assert(graphDF.filter($"role".contains("JUNIOR DEVELOPER")).count() == 1) // Level 8
 
     import org.apache.spark.sql.functions._
     assert(graphDF.agg(sum("iscyclic")).first.get(0) == 0)
@@ -55,5 +55,3 @@ class HierarchyEmployeeModelTest extends org.scalatest.FunSuite with Matchers wi
   }
 
 }
-
-
