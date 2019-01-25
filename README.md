@@ -10,7 +10,8 @@ An article was published explaining:
 #### Provided Mechanisms ####
 
  * The template of a project using SBT;
- * A top-down graph to find a company's employee hierarchy.
+ * A top-down graph to find a company's employee hierarchy;
+ * Parsing XML file: FsImage (HDFS).
  
 #### Build and Running ####
  
@@ -46,5 +47,6 @@ Within the SBT console perform a specific test:
 
 ```shell
 > testOnly io.github.edersoncorbari.graph.HierarchyEmployeeTest
+> testOnly io.github.edersoncorbari.hdfs.FsImageTest
 ```
 

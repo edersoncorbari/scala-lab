@@ -30,7 +30,7 @@ class HierarchyEmployeeTest extends org.scalatest.FunSuite with Matchers with Sp
 
     assert(empDF.count() == 15)
 
-    val graphDF = HierarchyEmployeeService(sparkSession).compute(empDF)
+    val graphDF = HierarchyEmployee(sparkSession).compute(empDF)
 
     graphDF.show(false)
 

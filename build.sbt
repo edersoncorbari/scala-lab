@@ -7,8 +7,8 @@ libraryDependencies += "org.apache.spark" %% "spark-core" % sparkVersion
 libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion
 libraryDependencies += "org.apache.spark" %% "spark-graphx" % sparkVersion
 libraryDependencies += "org.apache.spark" %% "spark-hive" % sparkVersion
-
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.2" % Test
+libraryDependencies += "com.databricks" %% "spark-xml" % "0.4.1"
 
 resolvers += "Spark Packages Repo" at "http://dl.bintray.com/spark-packages/maven"
 
