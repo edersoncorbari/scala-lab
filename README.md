@@ -6,6 +6,7 @@ An article was published explaining:
 
  * [https://edersoncorbari.github.io/tutorials/scala-spark-graph/](https://edersoncorbari.github.io/tutorials/scala-spark-graph/)
  * [https://dzone.com/articles/bigdata-developing-a-graph-in-spark-and-scala](https://dzone.com/articles/bigdata-developing-a-graph-in-spark-and-scala)
+ * [https://dzone.com/articles/hdfs-offline-analysis-of-fsimage-metadata](https://dzone.com/articles/hdfs-offline-analysis-of-fsimage-metadata)
 
 #### Provided Mechanisms ####
 
