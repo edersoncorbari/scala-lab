@@ -13,7 +13,11 @@ An article was published explaining:
  * The template of a project using SBT;
  * A top-down graph to find a company's employee hierarchy;
  * Parsing XML file: FsImage (HDFS).
- 
+
+#### Emacs
+
+![](https://raw.github.com/edersoncorbari/scala-lab/master/docs/shot-emacs.jpg) 
+
 #### Build and Running ####
  
 To compile the project, you must have the following tools installed:

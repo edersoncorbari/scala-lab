@@ -24,6 +24,7 @@
 *.log
 *.swp
 *.swo
+*.ensime
 
 # OS generated files #
 ######################
@@ -33,12 +34,14 @@
 .Spotlight-V100
 .Trashes
 .idea
+.ensime_cache
 ehthumbs.db
 Thumbs.db
 
 # Specific directories #
 ########################
-project/project/
-project/target/
-target/
-spark-warehouse/
+project/project
+project/target
+target
+spark-warehouse
+metastore_db
