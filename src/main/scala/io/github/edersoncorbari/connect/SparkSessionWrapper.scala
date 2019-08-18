@@ -1,16 +1,18 @@
 package io.github.edersoncorbari.connect
 
 import org.apache.spark.sql.SparkSession
+import io.github.edersoncorbari.Config
 
-trait SparkSessionWrapper {
+trait SparkSessionWrapper extends Config {
 
   lazy val sparkSession: SparkSession = {
     SparkSession
       .builder()
-      .master("local")
-      .appName("scala-lab")
+      .master(appConf.master)
+      .appName(appConf.name)
+      .enableHiveSupport()
       .getOrCreate()
   }
 
-  def stop() = sparkSession.close()
+  lazy val stop = sparkSession.close()
 }

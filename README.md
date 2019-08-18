@@ -25,10 +25,10 @@ Now run the commands below to compile the project:
 ```shell
 $ git clone https://github.com/edersoncorbari/scala-lab.git
 $ cd scala-lab
-$ sbt update; sbt compile; sbt run
+$ sbt update compile run
 ```
 
-If you receive an error of type: "*Caused by: java.net.UnknownHostException: viking3: viking3: Name or service not known*", your hostname is not configured in the /etc/hosts please add and run again.
+If you receive an error of type: "*Caused by: java.net.UnknownHostException: your-host: localhost: Name or service not known*", your hostname is not configured in the **/etc/hosts** please add and run again.
 
 #### Testing ####
  

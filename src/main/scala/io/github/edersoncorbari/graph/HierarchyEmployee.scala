@@ -5,7 +5,6 @@ import org.apache.spark.graphx._
 import org.apache.spark.rdd.RDD
 import scala.util.hashing.MurmurHash3
 
-
 /**
  * Modeling an Organizational Hierarchy of Employees, using
  * Graph (Top-Down), usually used in large behaviors such as a Bank.
@@ -16,23 +15,18 @@ case class HierarchyEmployee(sparkSession: SparkSession) extends Serializable {
 
   private[this] def deepTopLevelHierarcy(vertexNodeDF: DataFrame, edgeRelationShipDF: DataFrame):
     RDD[(Any, (Int, Any, String, Int, Int))] = {
-    // Creating a Vertex with primary key, root, path.
     val vRDD = vertexNodeDF
       .rdd
       .map{x => (x.get(0), x.get(1), x.get(2))}
       .map{x => (MurmurHash3.stringHash(x._1.toString).toLong, (x._1.asInstanceOf[Any],
         x._2.asInstanceOf[Any], x._3.asInstanceOf[String]))}
 
-    // Creating an Edge Top-Down of relationships.
     val eRDD = edgeRelationShipDF.rdd.map{x => (x.get(0), x.get(1))}
       .map{x => Edge(MurmurHash3.stringHash(x._1.toString).toLong,
       MurmurHash3.stringHash(x._2.toString).toLong, "topdown")}
 
-    // Creating the graph.
     val graph = Graph(vRDD, eRDD).persist()
 
-    // Get vertices with: (id, level, root, path, iscyclic), existing value of current vertex
-    // to build (path, isleaf, emplid).
     val initialGraph = graph.mapVertices((id, v) => (id, 0, v._2, List(v._3), 0, v._3, 1, v._1))
     initialGraph.pregel((0L, 0, 0.asInstanceOf[Any], List(""), 0, 1),
       Int.MaxValue, EdgeDirection.Out)(setMsg, sendMsg, receiveMsg)
